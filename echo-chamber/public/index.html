@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔮 Cámara de Ecos - Predictor de Secuencias</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>✨ Cámara de Ecos de Numeria ✨</h1>
+                <p class="subtitle">Un Predictor Mágico de Secuencias de Números</p>
+            </div>
+            <div class="status-indicator">
+                <span id="status" class="status-online">● En línea</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Sección de Historia -->
+            <section class="story-section">
+                <div class="story-box">
+                    <h2>📖 La Historia</h2>
+                    <p>
+                        En la tierra mística de Numeria, existe una cámara antigua llena de ecos mágicos.
+                        Cada eco lleva consigo una secuencia de números que sigue un patrón oculto: una
+                        progresión aritmética donde la diferencia entre números consecutivos nunca cambia.
+                    </p>
+                    <p>
+                        Tu misión: <strong>¡Descubre el patrón y predice el siguiente número!</strong>
+                    </p>
+                </div>
+            </section>
+
+            <div class="content-grid">
+                <!-- Columna Izquierda: Predicción -->
+                <aside class="left-column">
+                    <section class="prediction-section">
+                        <h2>🔮 Predecir Siguiente Número</h2>
+                        
+                        <div class="input-group">
+                            <label for="sequence-input">Ingresa la secuencia (números separados por comas):</label>
+                            <input 
+                                type="text" 
+                                id="sequence-input" 
+                                placeholder="Ej: 3, 6, 9, 12"
+                                class="input-field"
+                            >
+                            <small class="help-text">Ejemplo: 2, 4, 6, 8, 10</small>
+                        </div>
+
+                        <div class="button-group">
+                            <button id="predict-btn" class="btn btn-primary">
+                                ✨ Predecir
+                            </button>
+                            <button id="validate-btn" class="btn btn-secondary">
+                                ✓ Validar
+                            </button>
+                        </div>
+
+                        <!-- Resultado de Predicción -->
+                        <div id="prediction-result" class="result-box hidden">
+                            <div class="result-content">
+                                <div class="result-item">
+                                    <span class="label">Secuencia:</span>
+                                    <span id="result-sequence" class="value"></span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="label">Diferencia Común:</span>
+                                    <span id="result-difference" class="value"></span>
+                                </div>
+                                <div class="result-item highlight">
+                                    <span class="label">📊 Siguiente Número:</span>
+                                    <span id="result-prediction" class="value large"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mensajes de Error -->
+                        <div id="error-message" class="error-box hidden"></div>
+                    </section>
+
+                    <!-- Ejemplos de Prueba -->
+                    <section class="examples-section">
+                        <h3>📚 Ejemplos de Prueba</h3>
+                        <div id="examples-container" class="examples-grid">
+                            <!-- Se llena dinámicamente -->
+                        </div>
+                    </section>
+                </aside>
+
+                <!-- Columna Derecha: Recuerdos y Controles -->
+                <aside class="right-column">
+                    <!-- Contador de Recuerdos -->
+                    <section class="memories-header">
+                        <h2>📜 Recuerdos Almacenados</h2>
+                        <div class="memory-counter">
+                            <span id="memory-count" class="count">0</span>
+                            <span class="label">predicciones</span>
+                        </div>
+                    </section>
+
+                    <!-- Lista de Recuerdos -->
+                    <section class="memories-section">
+                        <div id="memories-list" class="memories-list">
+                            <p class="empty-message">No hay recuerdos aún. ¡Haz tu primera predicción!</p>
+                        </div>
+                    </section>
+
+                    <!-- Controles -->
+                    <section class="controls-section">
+                        <h3>🎛️ Controles</h3>
+                        <button id="refresh-btn" class="btn btn-outline">
+                            🔄 Actualizar Recuerdos
+                        </button>
+                        <button id="clear-btn" class="btn btn-danger">
+                            🧹 Limpiar Todo
+                        </button>
+                    </section>
+
+                    <!-- Estadísticas -->
+                    <section class="stats-section">
+                        <h3>📊 Estadísticas</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-label">Predicciones</span>
+                                <span id="stat-predictions" class="stat-value">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Exitosas</span>
+                                <span id="stat-successful" class="stat-value">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Diferencia Promedio</span>
+                                <span id="stat-avg-diff" class="stat-value">-</span>
+                            </div>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>🔮 Cámara de Ecos v1.0 | Predictor Mágico de Secuencias</p>
+            <p class="footer-text">Diseñado para explorar las maravillas de las progresiones aritméticas</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
